@@ -48,9 +48,9 @@ user_pref("browser.tabs.min_inactive_duration_before_unload", 300000); // 5 min
 user_pref("browser.tabs.drawInTitlebar", true);
 
 /** [6] AI AND MOZILLA FEATURES ***/
-user_pref("browser.ml.enable", true);
-user_pref("browser.ml.chat.enabled", true);
-user_pref("browser.ml.chat.menu", true);
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.menu", false);
 
 /** [7] MACOS SPECIFIC ***/
 user_pref("widget.macos.native-context-menus", true);
