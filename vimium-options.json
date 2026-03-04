@@ -1,0 +1,26 @@
+{
+  "newTabUrl": "about:blank",
+  "ignoreKeyboardLayout": true,
+  "scrollStepSize": 333,
+  "grabBackFocus": true,
+  "searchEngines": "# w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\nyt: https://www.youtube.com/results?search_query=%s Youtube\ny: https://yandex.ru/search/smart/?text=%s Яндекс\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "settingsVersion": "2.3.1",
+  "exclusionRules": [
+    {
+      "passKeys": "t1234567890-=f",
+      "pattern": "https?://www.youtube.com/watch*"
+    },
+    {
+      "passKeys": "f",
+      "pattern": "https?://hd.kinopoisk.ru/*"
+    },
+    {
+      "passKeys": "f",
+      "pattern": "https?://rutube.ru/*"
+    },
+    {
+      "passKeys": "f",
+      "pattern": "https://kino.pub/item/play/*"
+    }
+  ]
+}
