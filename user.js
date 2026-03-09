@@ -54,3 +54,10 @@ user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 // While it can speed up loading, it consumes extra RAM and bandwidth by loading pages you might not visit.
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
+
+// --- [ SIDEBAR ANIMATION ] ---
+
+user_pref("sidebar.animation.enabled", true);
+user_pref("sidebar.animation.duration-ms", 50);
+user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 50);
+user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
