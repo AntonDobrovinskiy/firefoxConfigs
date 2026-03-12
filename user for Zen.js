@@ -27,13 +27,12 @@ user_pref("browser.cache.memory.capacity", 524288);
 user_pref("nglayout.initialpaint.delay", 0);
 user_pref("nglayout.initialpaint.delay_in_oopif", 0);
 
-// Enable hardware acceleration and WebRender to offload rendering from the CPU to the GPU.
+// Smooooooooth scroll
 user_pref("layers.acceleration.force-enabled", true);
 user_pref("gfx.webrender.all", false);
 user_pref("gfx.webrender.compositor.force-enabled", false);
 user_pref("layout.frame_rate", 60);
 user_pref("layout.framevisibility.enabled", true);
-
 
 // Optimize network requests by increasing the number of simultaneous connections.
 user_pref("network.http.max-connections", 1500);
