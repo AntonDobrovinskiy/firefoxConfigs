@@ -16,7 +16,9 @@
     "faqs": true,
     "favicon": false,
     "favicon-delay": 100,
-    "force.hostnames": [],
+    "force.hostnames": [
+      "t.me"
+    ],
     "form": true,
     "go-hidden": false,
     "idle": false,
@@ -29,7 +31,7 @@
     "memory-value": 60,
     "mode": "time-based",
     "notification.permission": false,
-    "number": 2,
+    "number": 1,
     "online": false,
     "page.context": false,
     "paused": false,
@@ -41,11 +43,18 @@
     "startup-release-pinned": false,
     "startup-unpinned": true,
     "tab.context": true,
-    "trash.keys": {},
+    "trash.keys": {
+      "https://duck.ai/": [
+        1774248756694,
+        86400
+      ]
+    },
     "trash.period": 24,
     "trash.unloaded": true,
     "trash.whitelist-url": [],
-    "whitelist": [],
+    "whitelist": [
+      "docs.google.com"
+    ],
     "whitelist-url": []
   },
   "localStorage": {
