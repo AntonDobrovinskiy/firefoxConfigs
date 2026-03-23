@@ -53,7 +53,8 @@
     "trash.unloaded": true,
     "trash.whitelist-url": [],
     "whitelist": [
-      "docs.google.com"
+      "docs.google.com",
+      "web.max.ru"
     ],
     "whitelist-url": []
   },
