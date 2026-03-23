@@ -1,3 +1,5 @@
+user_pref("browser.tabs.splitView.enabled", true)
+
 // --- [ MEMORY MANAGEMENT ] ---
 
 // Limit the number of back/forward history entries stored in RAM.
