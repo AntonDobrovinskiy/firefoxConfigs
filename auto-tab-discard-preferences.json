@@ -14,11 +14,9 @@
     "battery": false,
     "click": "click.discard-tabs",
     "faqs": true,
-    "favicon": false,
+    "favicon": true,
     "favicon-delay": 100,
-    "force.hostnames": [
-      "t.me"
-    ],
+    "force.hostnames": [],
     "form": true,
     "go-hidden": false,
     "idle": false,
@@ -44,18 +42,75 @@
     "startup-unpinned": true,
     "tab.context": true,
     "trash.keys": {
-      "https://duck.ai/": [
-        1774248756694,
+      "https://www.youtube.com/watch?v=-wYbNajZ60c": [
+        1774353984328,
+        86400
+      ],
+      "https://kino.pub/item/view/1954/s0e1": [
+        1774355668817,
+        86400
+      ],
+      "https://open.spotify.com/album/6C9MvgMnjMmIAR1Xe0ayNt": [
+        1774355668817,
+        86400
+      ],
+      "https://x.com/home": [
+        1774355668817,
+        86400
+      ],
+      "https://github.com/catppuccin/firefox?tab=readme-ov-file": [
+        1774358801239,
+        86400
+      ],
+      "https://kino.pub/item/view/2272/s0e1": [
+        1774358801239,
+        86400
+      ],
+      "https://www.youtube.com/watch?v=_lUYaeVToh4&pp=ugUHEgVlbi1VUw%3D%3D": [
+        1774358801239,
+        86400
+      ],
+      "https://github.com/AntonDobrovinskiy": [
+        1774360214799,
+        86400
+      ],
+      "https://gemini.google.com/app": [
+        1774360214799,
+        86400
+      ],
+      "https://kino.pub/item/view/120460/s0e1": [
+        1774360214799,
+        86400
+      ],
+      "https://www.reddit.com/?feed=home": [
+        1774360214799,
+        86400
+      ],
+      "https://www.youtube.com/watch?v=Zdqh5-13Bpw": [
+        1774360214799,
+        86400
+      ],
+      "https://www.youtube.com/watch?v=lg7aAhM8GkI": [
+        1774360214799,
+        86400
+      ],
+      "https://www.reddit.com/r/firefox/comments/1j824nu/try_other_protection_tools_from_mozilla/": [
+        1774360214799,
+        86400
+      ],
+      "https://www.google.com/search?client=firefox-b-d&q=firefox+remove+protection+tools+ad": [
+        1774360246728,
+        86400
+      ],
+      "undefined": [
+        1774360459011,
         86400
       ]
     },
     "trash.period": 24,
     "trash.unloaded": true,
     "trash.whitelist-url": [],
-    "whitelist": [
-      "docs.google.com",
-      "web.max.ru"
-    ],
+    "whitelist": [],
     "whitelist-url": []
   },
   "localStorage": {
