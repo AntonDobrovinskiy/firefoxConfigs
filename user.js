@@ -52,10 +52,17 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 
-// Disable speculative pre-connections and prefetching.
-// While it can speed up loading, it consumes extra RAM and bandwidth by loading pages you might not visit.
-user_pref("network.predictor.enabled", false);
-user_pref("network.prefetch-next", false);
+// Speculative pre-connections and prefetching can speed up loading,
+// but consume extra RAM and bandwidth by loading pages you might not visit.
+// For privacy, set both to false.
+user_pref("network.predictor.enabled", true);
+user_pref("network.prefetch-next", true);
+
+// Disable Firefox Accounts toolbar icons (Pocket, Monitor, Relay, VPN).
+user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
+user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
+user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
+user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
 
 // --- [ SIDEBAR ANIMATION ] ---
 
