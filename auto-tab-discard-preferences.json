@@ -34,7 +34,7 @@
     "number": 1,
     "online": false,
     "page.context": false,
-    "paused": false,
+    "paused": true,
     "period": 300,
     "pinned": false,
     "prepends": "💤",
