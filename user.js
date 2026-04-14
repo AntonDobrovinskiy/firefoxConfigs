@@ -70,3 +70,5 @@ user_pref("sidebar.animation.enabled", true);
 user_pref("sidebar.animation.duration-ms", 50);
 user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 50);
 user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
+
+user_pref("browser.uidensity", 1);
