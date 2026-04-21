@@ -72,3 +72,8 @@ user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 50);
 user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
 
 user_pref("browser.uidensity", 1);
+
+// --- [ CUSTOMIZATION & APPEARANCE ] ---
+
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
