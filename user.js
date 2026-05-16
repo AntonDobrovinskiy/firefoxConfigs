@@ -73,7 +73,8 @@ user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
 
 user_pref("browser.uidensity", 1);
 
-// --- [ CUSTOMIZATION & APPEARANCE ] ---
+// --- [ MISC ] ---
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
+user_pref("accessibility.force_disabled, 1);
