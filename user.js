@@ -31,7 +31,7 @@ user_pref("nglayout.initialpaint.delay_in_oopif", 0);
 
 // Enable hardware acceleration and WebRender to offload rendering from the CPU to the GPU.
 user_pref("layers.acceleration.force-enabled", true);
-user_pref("gfx.webrender.all", true);
+// user_pref("gfx.webrender.all", true);
 
 // Optimize network requests by increasing the number of simultaneous connections.
 user_pref("network.http.max-connections", 1500);
@@ -77,4 +77,4 @@ user_pref("browser.uidensity", 1);
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
-user_pref("accessibility.force_disabled, 1);
+user_pref("accessibility.force_disabled", 1);
