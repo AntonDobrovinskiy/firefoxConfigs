@@ -1,5 +1,3 @@
-user_pref("browser.tabs.splitView.enabled", true)
-
 // --- [ MEMORY MANAGEMENT ] ---
 
 // Limit the number of back/forward history entries stored in RAM.
@@ -61,15 +59,6 @@ user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("network.predictor.enabled", true);
 user_pref("network.prefetch-next", true);
 
-// Disable Firefox Accounts toolbar icons (Pocket, Monitor, Relay, VPN).
-user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
-user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
-user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
-user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
-
-// --- [ SIDEBAR ANIMATION ] ---
-
-user_pref("sidebar.animation.enabled", true);
-user_pref("sidebar.animation.duration-ms", 50);
-user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 50);
-user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
+user_pref("browser.tabs.splitView.enabled", true);
+user_pref("widget.macos.sidebar-blend-mode.behind-window",	false);		
+user_pref("widget.macos.titlebar-blend-mode.behind-window", false);
