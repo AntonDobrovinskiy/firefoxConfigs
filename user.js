@@ -1,80 +1,107 @@
-user_pref("browser.tabs.splitView.enabled", true)
+// ============================================================================
+// ULTIMATE UNIFIED CONFIG: INTEL XEON (MAC PRO) & APPLE SILICON (M1)
+// ============================================================================
 
-// --- [ MEMORY MANAGEMENT ] ---
+user_pref("browser.tabs.splitView.enabled", true);
+user_pref("browser.uidensity", 1);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
 
-// Limit the number of back/forward history entries stored in RAM.
-// Default can be as high as 50; reduced to 10 to save memory.
-user_pref("browser.sessionhistory.max_entries", 10);
+// --- [ 1. HARDWARE ACCELERATION & GRAPHICS (BOOST FOR AMD FIREPRO & M1) ] ---
 
-// Number of "live" pages kept in memory for instant back/forward navigation (bfcache).
-// The -1 (auto) setting can be aggressive on 8GB RAM; capped at 3 pages.
-user_pref("browser.sessionhistory.max_total_viewers", 3);
+// Force WebRender to full capacity. 
+// On Mac Pro, this revives both FirePro cards; on M1, it utilizes the built-in GPU natively.
+user_pref("gfx.webrender.all", true);
+user_pref("gfx.webrender.enabled", true);
+user_pref("layers.acceleration.force-enabled", true);
 
-// Enable the native mechanism to unload tabs when system memory is low.
+// Enable hardware video decoding. Relieves the old Xeon processor during YouTube playback.
+user_pref("media.hardware-video-decoding.enabled", true);
+user_pref("media.hardware-video-decoding.force-enabled", true);
+
+// Allow WebGL to use hardware scaling
+user_pref("webgl.force-enabled", true);
+
+
+// --- [ 2. MEMORY MANAGEMENT (SMART BALANCE FOR RAM & SWAP) ] ---
+
+// Return cache to auto-management (-1). 
+// Mac Pro has plenty of RAM—let it store everything there. On M1, this prevents excessive SSD writes (SWAP).
+user_pref("browser.cache.memory.capacity", -1);
+
+// Aggressively unload inactive tabs when memory is low (lifesaver for 8GB M1 models).
 user_pref("browser.tabs.unloadOnLowMemory", true);
 
-// Limit the image cache in RAM. 
-// Prevents the process from bloating when scrolling through image-heavy feeds (social media).
+// Limit image cache within reasonable bounds so endless feeds don't consume gigabytes.
 user_pref("image.mem.max_ms_before_yield", 100);
 user_pref("image.mem.surfacecache.max_size_kb", 262144); // 256MB
 
-// Set a hard cap for the memory cache. 
-// If set to -1 (auto), Firefox may use 1GB+; capped here at ~512MB (524288 KB).
-user_pref("browser.cache.memory.capacity", 524288);
+// Navigation history limit (bfcache) set to balance. 3 pages is perfect for instant Back/Forward.
+user_pref("browser.sessionhistory.max_total_viewers", 3);
+user_pref("browser.sessionhistory.max_entries", 15);
 
 
-// --- [ PERFORMANCE AND RESPONSIVENESS ] ---
+// --- [ 3. CPU OPTIMIZATION (RESOURCES ONLY FOR ACTIVE TASKS) ] ---
 
-// Start rendering pages immediately instead of waiting for the default 250ms delay.
+// Strictly throttle background tabs. Inactive tabs are barely allowed to wake up the CPU.
+// This keeps the old Xeon from overheating and saves battery/resources on the M1.
+user_pref("dom.timeout.background_throttling_max_budget", 50);
+user_pref("dom.timeout.background_budget_regeneration_rate", 3);
+
+// Limit the base number of content processes. 
+// Too many processes create context-switching overhead for the old Xeon.
+user_pref("dom.ipc.processCount", 4);
+user_pref("dom.ipc.processCount.webIsolated", 4); // Optimal for Fission (site isolation)
+
+
+// --- [ 4. SPEED AND INTERFACE RESPONSIVENESS ] ---
+
+// Remove delay before page rendering starts. Pages begin assembling instantly.
 user_pref("nglayout.initialpaint.delay", 0);
 user_pref("nglayout.initialpaint.delay_in_oopif", 0);
 
-// Enable hardware acceleration and WebRender to offload rendering from the CPU to the GPU.
-user_pref("layers.acceleration.force-enabled", true);
-// user_pref("gfx.webrender.all", true);
+// Completely disable cosmetic browser animations (opening tabs, menus, etc.).
+// The interface becomes rock-solid and visually "flies". Ideal for keyboard navigation.
+user_pref("toolkit.cosmeticAnimations.enabled", false);
 
-// Optimize network requests by increasing the number of simultaneous connections.
+
+// --- [ 5. NETWORKING, STRICT PRIVACY & DEBLOATING ] ---
+
+// FIXED: Completely disable prediction and hidden pre-rendering. 
+// No more parasitic background traffic or hidden CPU load.
+user_pref("network.predictor.enabled", false);
+user_pref("network.prefetch-next", false);
+user_pref("network.dns.disablePrefetch", true);
+user_pref("network.http.speculative-parallel-limit", 0);
+
+// Optimize connection limits for modern high-speed networks
 user_pref("network.http.max-connections", 1500);
 user_pref("network.http.max-persistent-connections-per-server", 10);
+user_pref("network.http.max-urgent-start-excessive-connections", 30);
 
-
-// --- [ PRIVACY AND DE-BLOATING ] ---
-// Fewer background processes = less RAM and CPU usage.
-
-// Disable telemetry and data collection to reduce background overhead.
+// Strip out telemetry, reports, and tracking (removes background threads)
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("app.shield.optoutstudies.enabled", false);
 
-// Disable "bloat" features on the New Tab page (Pocket, sponsored stories).
+// Clean the New Tab page from Pocket, sponsors, and ads
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
 
-// Speculative pre-connections and prefetching can speed up loading,
-// but consume extra RAM and bandwidth by loading pages you might not visit.
-// For privacy, set both to false.
-user_pref("network.predictor.enabled", true);
-user_pref("network.prefetch-next", true);
-
-// Disable Firefox Accounts toolbar icons (Pocket, Monitor, Relay, VPN).
+// Remove unnecessary clutter from the toolbar (Firefox Accounts overhead)
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
 
-// --- [ SIDEBAR ANIMATION ] ---
 
-user_pref("sidebar.animation.enabled", true);
-user_pref("sidebar.animation.duration-ms", 50);
-user_pref("sidebar.animation.expand-on-hover.delay-duration-ms", 50);
-user_pref("sidebar.animation.expand-on-hover.duration-ms", 50);
+// --- [ 6. ADDITIONAL MAC TUNING ] ---
 
-user_pref("browser.uidensity", 1);
-
-// --- [ MISC ] ---
-
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
+// Disable built-in Accessibility services if not needed. 
+// On macOS, they often cause hidden memory leaks and interface stutters.
 user_pref("accessibility.force_disabled", 1);
