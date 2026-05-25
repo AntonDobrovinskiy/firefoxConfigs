@@ -43,6 +43,9 @@ user_pref("browser.cache.memory.capacity", -1);
 // Выгружаем неактивные вкладки при нехватке памяти (спасение для базовых M1)
 user_pref("browser.tabs.unloadOnLowMemory", true);
 
+// Визуально затемнять выгруженные вкладки для наглядности
+user_pref("browser.tabs.fadeOutUnloadedTabs", true);
+
 // Ограничиваем кэш изображений, чтобы бесконечные ленты не раздували процесс
 user_pref("image.mem.max_ms_before_yield", 100);
 user_pref("image.mem.surfacecache.max_size_kb", 262144); // 256MB

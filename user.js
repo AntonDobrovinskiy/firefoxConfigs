@@ -32,6 +32,9 @@ user_pref("browser.cache.memory.capacity", -1);
 // Aggressively unload inactive tabs when memory is low (lifesaver for 8GB M1 models).
 user_pref("browser.tabs.unloadOnLowMemory", true);
 
+// Visually dim unloaded tabs to make them easily identifiable
+user_pref("browser.tabs.fadeOutUnloadedTabs", true);
+
 // Limit image cache within reasonable bounds so endless feeds don't consume gigabytes.
 user_pref("image.mem.max_ms_before_yield", 100);
 user_pref("image.mem.surfacecache.max_size_kb", 262144); // 256MB
