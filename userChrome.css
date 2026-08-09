@@ -1,0 +1,42 @@
+/* ============================================================================
+   userChrome.css — macOS Translucency and Vibrancy Style
+   ============================================================================ */
+
+/* 1. Make the main window and core containers transparent */
+#main-window,
+#toolbar-menubar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#navigator-toolbox {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 2. Apply native macOS frosted glass effect (Vibrancy) to the main window */
+#main-window {
+  appearance: -moz-mac-vibrancy-dark !important; /* Native macOS blur (optimized for dark themes) */
+}
+
+/* 3. Subtle semi-transparent overlay on the toolbox for readability */
+#navigator-toolbox {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 4. Tab background styling (active and inactive states) */
+.tab-background {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 6px !important;
+}
+
+.tabblock[selected="true"] .tab-background,
+.tab-background[selected="true"] {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 5. Translucency and blur effect for the URL bar */
+#urlbar-background {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
