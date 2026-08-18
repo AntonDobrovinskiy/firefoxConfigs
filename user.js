@@ -21,3 +21,5 @@ user_pref("widget.macos.native-fullscreen", true);
 user_pref("browser.tabs.unloadOnLowMemory", true);
 user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 user_pref("browser.tabs.fadeOutExplicitlyUnloadedTabs", true);
+
+user_pref("browser.tabs.closeTabByDblclick", true);
