@@ -48,3 +48,5 @@ user_pref("zen.view.experimental-rounded-view", false);
 
 // --- Дополнительно полезное (не влияет на скорость активных вкладок) ---
 user_pref("network.predictor.enable-hover-on-ssl", false); // меньше фонового префетча
+
+user_pref("browser.ctrlTab.maxPreviews", 5);
