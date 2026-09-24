@@ -50,3 +50,5 @@ user_pref("zen.view.experimental-rounded-view", false);
 user_pref("network.predictor.enable-hover-on-ssl", false); // меньше фонового префетча
 
 user_pref("browser.ctrlTab.maxPreviews", 5);
+
+user_pref("browser.uidensity", 1);
