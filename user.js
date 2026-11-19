@@ -194,4 +194,4 @@ user_pref("zen.tab-unloader.timeout-minutes", 45);
 // Right now it's "false" (no experimental rounded corners).
 // Your M3 chip handles round corners effortlessly, so if you like the cute
 // rounded look in Zen, just change "false" to "true"!
-user_pref("zen.view.experimental-rounded-view", false);
+user_pref("zen.view.experimental-rounded-view", true);
